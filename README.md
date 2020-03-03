@@ -1,4 +1,4 @@
-# Create teamplate in oVirt from qcow2 with Terraform
+# Create VM in oVirt from template with Terraform
 
 ```
 export OVIRT_PASSWORD="mypassword"
@@ -9,6 +9,7 @@ terraform apply -var="ovirt_password=$OVIRT_PASSWORD"
 
 ## Get template ID
 ```
+export OVIRT_PASSWORD="mypassword"
 curl --output ca.crt 'http://ovirt.example.com/ovirt-engine/services/pki-resource?resource=ca-certificate&format=X509-PEM-CA'
 curl -X GET -H "Accept: application/xml" -u admin@internal:$OVIRT_PASSWORD --cacert ca.crt https://ovirt.example.com:443/ovirt-engine/api
 
